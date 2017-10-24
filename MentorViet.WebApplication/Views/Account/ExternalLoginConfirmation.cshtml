@@ -1,0 +1,48 @@
+﻿@model MentorViet.WebApplication.Models.ExternalLoginConfirmationViewModel
+@{
+    ViewBag.Title = "Đăng ký";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<div class="col-md-12">
+    @using (Html.BeginForm("ExternalLoginConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(x => x.ProfileTypeId)
+        @Html.HiddenFor(x => x.Email)
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <div class="col-md-12">
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-danger outline" name="radProfileType">
+                        <input type="radio" value="1"> Mentor
+                    </label>
+                    <label class="btn btn-warning outline" name="radProfileType">
+                        <input type="radio" value="2"> Mentee
+                    </label>
+                </div>
+                @Html.HiddenFor(m => m.ProfileTypeId)
+                @Html.ValidationMessageFor(m => m.ProfileTypeId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-success w-100">Đăng ký</button>
+            </div>
+        </div>
+    }
+    <hr />
+</div>
+<div class="col-md-12 text-center">
+    <p>
+        Đã có tài khoản? @Html.ActionLink("Đăng nhập", "Login")
+    </p>
+    <p>
+        @Html.ActionLink("Quên mật khẩu?", "ForgotPassword")
+    </p>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/register")
+}

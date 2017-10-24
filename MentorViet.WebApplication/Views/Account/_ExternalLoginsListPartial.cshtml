@@ -1,0 +1,22 @@
+﻿@model MentorViet.WebApplication.Models.ExternalLoginListViewModel
+@using Microsoft.Owin.Security
+
+@{
+    var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
+    if (loginProviders.Count() > 0)
+    {
+        using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = Model.ReturnUrl }))
+        {
+            @Html.AntiForgeryToken()
+            <div id="socialLoginList">
+                <p>
+                    @foreach (AuthenticationDescription p in loginProviders)
+                    {
+                        string loginButtonName = "Đăng nhập bằng " + p.AuthenticationType;
+                        <button type="submit" class="btn btn-primary btn-external-login" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Dùng tài khoản @p.Caption của bạn để đăng nhập">@loginButtonName</button>
+                    }
+                </p>
+            </div>
+        }
+    }
+}

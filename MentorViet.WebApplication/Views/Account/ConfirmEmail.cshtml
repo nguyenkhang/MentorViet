@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Kích hoạt tài khoản";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<div class="col-md-12">
+    Tài khoản của bạn đã được kích hoạt thành công.
+    <hr />
+</div>
+<div class="col-md-12 text-center">
+    <p>
+        Đã có tài khoản? @Html.ActionLink("Đăng nhập", "Login")
+    </p>
+    <p>
+        @Html.ActionLink("Quên mật khẩu?", "ForgotPassword")
+    </p>
+</div>

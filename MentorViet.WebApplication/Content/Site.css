@@ -1,0 +1,96 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+.outline {
+    background-color: transparent;
+    color: inherit;
+    transition: all .25s;
+}
+
+.btn-primary.outline {
+    color: #428bca;
+}
+
+.btn-success.outline {
+    color: #5cb85c;
+}
+
+.btn-info.outline {
+    color: #5bc0de;
+}
+
+.btn-warning.outline {
+    color: #f0ad4e;
+}
+
+.btn-danger.outline {
+    color: #d9534f;
+}
+
+    .btn-primary.outline:hover,
+    .btn-success.outline:hover,
+    .btn-info.outline:hover,
+    .btn-warning.outline:hover,
+    .btn-danger.outline:hover {
+        color: #fff;
+    }
+
+/* styles for validation helpers */
+.field-validation-error span {
+    color: #e80c4d !important;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #e80c4d !important;
+}
+
+select.input-validation-error {
+    border: 1px solid #e80c4d !important;
+}
+
+textarea.input-validation-error {
+    border: 1px solid #e80c4d !important;
+}
+
+.validation-summary-errors {
+    color: #e80c4d;
+}
+
+/*Custom*/
+button.w-100 {
+    width: 100%;
+}
+
+.btn-external-login {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.login-page-bg {
+    background-color:#f0f0f0;
+}
+
+.form-login {
+    border: solid 1px #eee;
+    border-radius: 10px;
+    background-color: #fff;
+}
